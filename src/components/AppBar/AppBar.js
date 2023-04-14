@@ -3,7 +3,7 @@ import { Navigation } from 'components/Navigation/Navigation';
 export const AppBar = () => {
   return (
     <>
-      <h1>appBar</h1>
+      <h1>Сontact book</h1>
       <Navigation></Navigation>
     </>
   );

@@ -9,9 +9,11 @@ import { useEffect } from 'react';
 import { fetchContacts } from 'redux/operations';
 import { Toast } from './Toastyfy/ToastContainer';
 import { Route, Routes } from 'react-router-dom';
-import { Home } from 'pages/Home';
+// import { Home } from 'pages/Home';
 import { Contacts } from 'pages/Contacts';
 import { Layout } from './Layout';
+import SignIn from 'pages/Login';
+import SignUp from 'pages/Register';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -24,8 +26,11 @@ export const App = () => {
     <Section>
       <Toast />
       <Routes>
-        <Route path="/" element={<Layout />} />
-        <Route path="/contacts" element={<Contacts />} />
+        <Route path="/" element={<Layout />}>
+          <Route path="/contacts" element={<Contacts />} />
+          <Route path="/login" element={<SignIn />} />
+          <Route path="/register" element={<SignUp />} />
+        </Route>
       </Routes>
       {/* <h2>Phonebook</h2>
       <ContactForm />
