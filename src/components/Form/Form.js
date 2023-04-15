@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 export const ContactForm = () => {
   const dispatch = useDispatch();
   const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
+  const [number, setNumber] = useState('');
   const contacts = useSelector(getContacts);
   const handleChange = evt => {
     const inputName = evt.target.name;
@@ -18,15 +18,15 @@ export const ContactForm = () => {
       case 'name':
         setName(evt.target.value);
         break;
-      case 'phone':
-        setPhone(evt.target.value);
+      case 'number':
+        setNumber(evt.target.value);
         break;
       default:
         return '';
     }
   };
   const onSubmit = evt => {
-    const newContact = { name, phone };
+    const newContact = { name, number };
 
     const existingContact = contacts.find(contact => contact.name === name);
     if (existingContact) {
@@ -38,12 +38,12 @@ export const ContactForm = () => {
   };
   const reset = () => {
     setName('');
-    setPhone('');
+    setNumber('');
   };
 
   return (
     <Section>
-      <Formik initialValues={(name, phone)} onSubmit={onSubmit}>
+      <Formik initialValues={(name, number)} onSubmit={onSubmit}>
         <Form>
           <Label>
             Name
@@ -63,9 +63,9 @@ export const ContactForm = () => {
             Number
             <Field
               onChange={handleChange}
-              value={phone}
+              value={number}
               type="tel"
-              name="phone"
+              name="number"
               pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
               title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
               required

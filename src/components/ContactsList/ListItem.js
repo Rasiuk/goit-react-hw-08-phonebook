@@ -3,12 +3,12 @@ import { ButtonDelete, Item, Name, Number } from './ContactsList.styled';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/operations';
 // import { deleteContact } from 'redux/contactsSlice';
-export const ListItem = ({ contacts: { id, name, phone } }) => {
+export const ListItem = ({ contacts: { id, name, number } }) => {
   const dispatch = useDispatch();
   return (
     <Item key={id}>
       <Name>{name}</Name>
-      <Number>{phone}</Number>
+      <Number>{number}</Number>
       <ButtonDelete onClick={() => dispatch(deleteContact(id))} type="button">
         delete
       </ButtonDelete>

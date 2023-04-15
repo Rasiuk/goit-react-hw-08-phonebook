@@ -1,3 +1,4 @@
+import { Container, ListNav } from './Navigation.styled';
 import { UserMenu } from 'components/UserMenu/UserMenu';
 import { useAuth } from 'hooks/useAuth';
 import { NavLink } from 'react-router-dom';
@@ -5,19 +6,19 @@ import { NavLink } from 'react-router-dom';
 export const Navigation = () => {
   const { isLoggedIn } = useAuth();
   return (
-    <ul>
+    <Container>
       <NavLink to="/">Home </NavLink>
       {isLoggedIn ? (
-        <div>
+        <ListNav>
           <NavLink to="/contacts">Contacts </NavLink>
-          <UserMenu></UserMenu>
-        </div>
+          <UserMenu />
+        </ListNav>
       ) : (
-        <div>
+        <ListNav>
           <NavLink to="/login">Login</NavLink>
           <NavLink to="/register">Register</NavLink>
-        </div>
+        </ListNav>
       )}
-    </ul>
+    </Container>
   );
 };
