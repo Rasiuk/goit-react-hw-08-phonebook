@@ -1,10 +1,13 @@
 import { Navigation } from 'components/Navigation/Navigation';
-import { Header, Title } from './AppBar.styled';
+import { Header } from './AppBar.styled';
+import { Typography } from '@mui/material';
 
 export const AppBar = () => {
   return (
     <Header>
-      <Title>Сontact book</Title>
+      <Typography component="h1" variant="h4" align="center" color="primary">
+        Сontact book
+      </Typography>
       <Navigation></Navigation>
     </Header>
   );

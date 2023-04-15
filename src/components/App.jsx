@@ -19,10 +19,10 @@ export const App = () => {
   const theme = createTheme({
     palette: {
       primary: {
-        main: purple[500],
+        main: purple[400],
       },
       secondary: {
-        main: '#f44336',
+        main: '#7986cb',
       },
     },
   });

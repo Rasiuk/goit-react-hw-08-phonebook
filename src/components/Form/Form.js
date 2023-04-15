@@ -1,11 +1,12 @@
-import { Formik, ErrorMessage } from 'formik';
+// import { Formik, ErrorMessage } from 'formik';
 import { useState } from 'react';
-import { Form, Field, Label, Section, Button } from './Form.styled';
+// import { Form, Field, Label, Section, Button } from './Form.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/operations';
 import { getContacts } from 'redux/contactsSlice';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Box, TextField, Button } from '@mui/material';
 export const ContactForm = () => {
   const dispatch = useDispatch();
   const [name, setName] = useState('');
@@ -42,8 +43,47 @@ export const ContactForm = () => {
   };
 
   return (
-    <Section>
-      <Formik initialValues={(name, number)} onSubmit={onSubmit}>
+    <div>
+      <Box
+        component="form"
+        onSubmit={onSubmit}
+        noValidate
+        sx={{ mt: 1, width: 400 }}
+      >
+        <TextField
+          onChange={handleChange}
+          margin="normal"
+          required
+          fullWidth
+          id="name"
+          label="Name"
+          value={name}
+          name="name"
+          autoComplete="name"
+          autoFocus
+        />
+        <TextField
+          onChange={handleChange}
+          margin="normal"
+          required
+          value={number}
+          type="tel"
+          fullWidth
+          name="number"
+          label="Number"
+          id="number"
+        />
+
+        <Button
+          type="submit"
+          fullWidth
+          variant="outlined"
+          sx={{ mt: 3, mb: 2 }}
+        >
+          Add contact
+        </Button>
+      </Box>
+      {/* <Formik initialValues={(name, number)} onSubmit={onSubmit}>
         <Form>
           <Label>
             Name
@@ -74,7 +114,7 @@ export const ContactForm = () => {
           </Label>
           <Button type="submit">Submit</Button>
         </Form>
-      </Formik>
-    </Section>
+      </Formik> */}
+    </div>
   );
 };

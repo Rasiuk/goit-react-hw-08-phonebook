@@ -1,5 +1,7 @@
 import styled from 'styled-components';
-export const LogOutButton = styled.button`
-  width: 70px;
-  height: 40px;
+export const UserBox = styled.div`
+  h4 {
+    margin-right: 15px;
+  }
+  display: flex;
 `;
