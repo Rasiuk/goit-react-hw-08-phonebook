@@ -2,15 +2,21 @@ import { useAuth } from 'hooks/useAuth';
 import { useDispatch } from 'react-redux';
 import { logOut } from 'redux/auth/operations';
 import LogoutIcon from '@mui/icons-material/Logout';
-import { Button, Typography } from '@mui/material';
-import { UserBox } from './UserMenu.styled';
+import { Box, Button, Typography } from '@mui/material';
 
 export const UserMenu = () => {
   const dispatch = useDispatch();
   const { user } = useAuth();
   return (
-    <UserBox>
-      <Typography component="h4" variant="h6" align="center" color="primary">
+    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+      <Typography
+        mr={1}
+        component="h3"
+        variant="subtitle1"
+        align="center"
+        color="primary"
+        sx={{ display: 'inline-block' }}
+      >
         {user.email}
       </Typography>
 
@@ -27,6 +33,6 @@ export const UserMenu = () => {
       >
         LogOut
       </Button>
-    </UserBox>
+    </Box>
   );
 };

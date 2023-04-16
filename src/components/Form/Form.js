@@ -6,7 +6,7 @@ import { addContact } from 'redux/operations';
 import { getContacts } from 'redux/contactsSlice';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Box, TextField, Button } from '@mui/material';
+import { Box, TextField, Button, Container } from '@mui/material';
 export const ContactForm = () => {
   const dispatch = useDispatch();
   const [name, setName] = useState('');
@@ -43,7 +43,7 @@ export const ContactForm = () => {
   };
 
   return (
-    <div>
+    <Container>
       <Box
         component="form"
         onSubmit={onSubmit}
@@ -115,6 +115,6 @@ export const ContactForm = () => {
           <Button type="submit">Submit</Button>
         </Form>
       </Formik> */}
-    </div>
+    </Container>
   );
 };

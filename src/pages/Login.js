@@ -5,14 +5,17 @@ import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 
 // import Link from '@mui/material/Link';
+import LoginIcon from '@mui/icons-material/Login';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { login } from 'redux/auth/operations';
+import { Link as RouterLink } from 'react-router-dom';
+import Link from '@mui/material/Link';
 
 function Copyright(props) {
   return (
@@ -22,9 +25,12 @@ function Copyright(props) {
       align="center"
       {...props}
     >
-      {'Copyright © '}
-      <Link color="inherit" to="/">
-        Book contacts
+      {'Created by '}
+      <Link
+        color="inherit"
+        href="https://github.com/Rasiuk/goit-react-hw-08-phonebook"
+      >
+        Yevgenii Rasiuk
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -92,12 +98,16 @@ export default function SignIn() {
             sx={{ mt: 3, mb: 2 }}
           >
             Sign In
+            <LoginIcon />
           </Button>
           <Grid container>
             <Grid item>
-              <Link to="/register" variant="body2">
-                {"Don't have an account? Sign Up"}
+              <Link component={RouterLink} to="/register">
+                Don't have an account? Sign Up{' '}
               </Link>
+              {/* <Link to="/register" variant="body2">
+                {"Don't have an account? Sign Up"}
+              </Link> */}
             </Grid>
           </Grid>
         </Box>

@@ -3,7 +3,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
@@ -11,6 +11,8 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
+import { Link as RouterLink } from 'react-router-dom';
+import Link from '@mui/material/Link';
 
 function Copyright(props) {
   return (
@@ -20,9 +22,12 @@ function Copyright(props) {
       align="center"
       {...props}
     >
-      {'Copyright © '}
-      <Link color="inherit" to="/">
-        Your Website
+      {'Created by '}
+      <Link
+        color="inherit"
+        href="https://github.com/Rasiuk/goit-react-hw-08-phonebook"
+      >
+        Rasiuk Yevgenii
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -122,9 +127,12 @@ export default function SignUp() {
           </Button>
           <Grid container justifyContent="flex-end">
             <Grid item>
-              <Link to="/login" variant="body2">
+              <Link component={RouterLink} to="/login">
                 Already have an account? Sign in
               </Link>
+              {/* <Link to="/login" variant="body2">
+                Already have an account? Sign in
+              </Link> */}
             </Grid>
           </Grid>
         </Box>

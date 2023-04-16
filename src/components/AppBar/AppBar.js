@@ -5,7 +5,13 @@ import { Typography } from '@mui/material';
 export const AppBar = () => {
   return (
     <Header>
-      <Typography component="h1" variant="h4" align="center" color="primary">
+      <Typography
+        component="h1"
+        variant="h4"
+        align="center"
+        color="primary"
+        mb={2}
+      >
         Сontact book
       </Typography>
       <Navigation></Navigation>
