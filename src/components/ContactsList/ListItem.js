@@ -28,6 +28,7 @@ export const ListItems = ({ contacts: { id, name, number } }) => {
         type="button"
         onClick={() => dispatch(deleteContact(id))}
         size="small"
+        color="secondary"
         variant="outlined"
         startIcon={<DeleteIcon fontSize="small" />}
       >

@@ -27,6 +27,7 @@ export const ContactForm = () => {
     }
   };
   const onSubmit = evt => {
+    evt.preventDefault();
     const newContact = { name, number };
 
     const existingContact = contacts.find(contact => contact.name === name);
@@ -76,7 +77,7 @@ export const ContactForm = () => {
 
         <Button
           onSubmit={onSubmit}
-          type="button"
+          type="submit"
           fullWidth
           variant="outlined"
           sx={{ mt: 3, mb: 2 }}
