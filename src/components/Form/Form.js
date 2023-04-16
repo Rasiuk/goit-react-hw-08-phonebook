@@ -75,6 +75,7 @@ export const ContactForm = () => {
         />
 
         <Button
+          onSubmit={onSubmit}
           type="submit"
           fullWidth
           variant="outlined"
