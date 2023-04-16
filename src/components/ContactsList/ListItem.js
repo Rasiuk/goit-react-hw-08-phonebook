@@ -20,7 +20,7 @@ export const ListItems = ({ contacts: { id, name, number } }) => {
       <ListItemAvatar>
         <Avatar sx={{ bgcolor: '#f2f3f4' }}>
           {/* <ImageIcon /> */}
-          <ContactsIcon color="primary" />
+          <ContactsIcon color="secondary" />
         </Avatar>
       </ListItemAvatar>
       <ListItemText primary={name} secondary={number} />
