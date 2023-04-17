@@ -14,6 +14,7 @@ import {
 } from '@mui/material';
 // import { deleteContact } from 'redux/contactsSlice';
 export const ListItems = ({ contacts: { id, name, number } }) => {
+  const handleDeleteContact = () => dispatch(deleteContact(id));
   const dispatch = useDispatch();
   return (
     <ListItem>
@@ -26,7 +27,7 @@ export const ListItems = ({ contacts: { id, name, number } }) => {
       <ListItemText primary={name} secondary={number} />
       <Button
         type="button"
-        onClick={() => dispatch(deleteContact(id))}
+        onClick={handleDeleteContact}
         size="small"
         color="secondary"
         variant="outlined"

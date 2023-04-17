@@ -26,7 +26,7 @@ export const Contacts = () => {
       </Typography>
 
       {isLoading && !error && <b>Request in progress...</b>}
-      {!isLoading && <Filter />}
+      <Filter />
       {!isLoading && <ContactList />}
     </div>
   );
